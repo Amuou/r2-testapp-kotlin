@@ -219,7 +219,6 @@ open class LibraryActivity : AppCompatActivity(), BooksAdapter.RecyclerViewClick
 
     override fun onStart() {
         super.onStart()
-
         startServer()
 
         permissionHelper.storagePermission {
@@ -634,17 +633,17 @@ open class LibraryActivity : AppCompatActivity(), BooksAdapter.RecyclerViewClick
                 server.loadReadiumCSSResources(assets)
                 server.loadR2ScriptResources(assets)
                 server.loadR2FontResources(assets, applicationContext)
-
-//                // Add your own resources here
+//                Add your own resources here
 //                server.loadCustomResource(assets.open("scripts/test.js"), "test.js")
 //                server.loadCustomResource(assets.open("styles/test.css"), "test.css")
 //                server.loadCustomFont(assets.open("fonts/test.otf"), applicationContext, "test.otf")
-
                 server.loadCustomResource(assets.open("Search/mark.js"), "mark.js", Injectable.Script)
                 server.loadCustomResource(assets.open("Search/search.js"), "search.js", Injectable.Script)
                 server.loadCustomResource(assets.open("Search/mark.css"), "mark.css", Injectable.Style)
-
-
+                server.loadCustomResource(assets.open("styles/article.css"), "article.css", Injectable.Style)
+                server.loadCustomResource(assets.open("styles/dict-popup.css"), "dict-popup.css", Injectable.Style)
+                server.loadCustomResource(assets.open("poly/jquery.js"), "jquery.js", Injectable.Script)
+                server.loadCustomResource(assets.open("poly/poly.js"), "poly.js", Injectable.Script)
             }
         }
     }

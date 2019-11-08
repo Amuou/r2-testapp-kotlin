@@ -14,6 +14,7 @@ import android.app.Activity
 import android.graphics.BitmapFactory
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +29,7 @@ open class BooksAdapter(private val activity: Activity, private var books: Mutab
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = activity.layoutInflater
         val view = inflater.inflate(R.layout.item_recycle_opds, parent, false)
-
+        WebView.setWebContentsDebuggingEnabled(true);
         return ViewHolder(view)
     }
 
